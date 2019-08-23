@@ -1,3 +1,5 @@
+Forked to keep subtle personal modifications.
+
 <div align="center">
   <h1>
     kuroi.vim
