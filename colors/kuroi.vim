@@ -57,6 +57,7 @@ let s:palette.gui.statuslinenc = { 'dark' : "#4e4e4e"        , 'light' : "#3a3a3
 let s:palette.gui.gitgutteradd = { 'dark' : "#5faf5f"        , 'light' : "#5faf5f"  }
 let s:palette.gui.gitgutterchg = { 'dark' : "#d78700"        , 'light' : "#d78700"  }
 let s:palette.gui.gitgutterdlt = { 'dark' : "#d75f87"        , 'light' : "#d75f87"  }
+let s:palette.gui.brightred    = { 'dark' : "#ff0000"		 , 'light' : "#ff0000"  }
 
 let s:cterm_foreground = "250"
 let s:cterm_selection  = "237"
@@ -92,6 +93,7 @@ let s:palette.cterm.statuslinenc = { 'dark' : "239"              , 'light' : "23
 let s:palette.cterm.gitgutteradd = { 'dark' : "71"               , 'light' : "71"  }
 let s:palette.cterm.gitgutterchg = { 'dark' : "172"              , 'light' : "172"  }
 let s:palette.cterm.gitgutterdlt = { 'dark' : "168"              , 'light' : "168"  }
+let s:palette.cterm.brightred    = { 'dark' : "9"           	 , 'light' : "9" }
 
 "}}}
 " Formatting Options:"{{{
@@ -171,6 +173,7 @@ call s:build_prim('fg', 'gray')
 call s:build_prim('fg', 'gitgutteradd')
 call s:build_prim('fg', 'gitgutterchg')
 call s:build_prim('fg', 'gitgutterdlt')
+call s:build_prim('fg', 'brightred')
 
 exe "let s:fmt_none = ' gui=NONE".          " cterm=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold = ' gui=NONE".s:b.      " cterm=NONE".s:b.      " term=NONE".s:b    ."'"
@@ -365,6 +368,16 @@ exe "hi! SignifySignChange"  .s:fg_gitgutterchg  .s:bg_none  .s:fmt_none
 exe "hi! SignifySignDelete"  .s:fg_gitgutterdlt  .s:bg_none  .s:fmt_none
 
 "}}}
+
+" ALE Sign Highlighting:"{{{
+" Makes use of a custom brightred color defined above
+" ----------------------------------------------------------------------------
+exe "hi! ALEErrorSign"		.s:fg_brightred  .s:bg_none  .s:fmt_none
+exe "hi! ALEWarningSign"	.s:fg_yellow     .s:bg_none  .s:fmt_none
+
+"}}}
+
+
 "
 " This is needed for some reason: {{{
 
